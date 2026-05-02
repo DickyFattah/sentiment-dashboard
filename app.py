@@ -22,7 +22,7 @@ else:
     df = pd.read_csv("data/sample_reviews.csv")
 
 # PREPROCESS
-df['clean'] = df['review'].apply(preprocess_text)
+df['clean'] = df['text'].apply(preprocess_text)
 df['sentiment'] = df['clean'].apply(lambda x: predict_sentiment(model, x))
 
 # KPI
